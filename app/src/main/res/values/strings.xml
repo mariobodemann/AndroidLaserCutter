@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Android Laser Cutter</string>
+    <string name="open_image_search">Add Photo ...</string>
+    <string name="image_density_label">density</string>
+    <string name="resolution_label">resolution</string>
+    <string name="unit_millimeter">mm</string>
+    <string name="width_label">width</string>
+    <string name="height_label">height</string>
+    <string name="frequency_label">frequency</string>
+    <string name="ip_label">ip</string>
+    <string name="laser_cutter_label">laser cutter</string>
+    <string name="dithering_label">dithering</string>
+</resources>

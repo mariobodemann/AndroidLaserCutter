@@ -1,0 +1,24 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'org.visicut'
+version = 'visicut1.7'
+
+description = """LibLaserCut"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    maven { url "http://www.sparetimelabs.com/maven2" }
+    maven { url "http://repo.maven.apache.org/maven2" }
+}
+
+dependencies {
+    implementation 'com.github.purejavacomm:purejavacomm:1.0.1.RELEASE'
+    implementation 'commons-net:commons-net:3.1'
+    implementation 'rhino:js:1.7R1'
+}
