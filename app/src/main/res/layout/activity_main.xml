@@ -5,34 +5,45 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+>
 
     <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            >
+    >
 
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:context=".MainActivity"
-                >
+        >
 
+            <Spinner
+                    android:id="@+id/main_preset_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/main_guide_start"
+                    app:layout_constraintEnd_toStartOf="@+id/main_guide_end"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/main_density"
+                    android:layout_marginTop="8dp"
+            />
             <androidx.constraintlayout.widget.Guideline
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/main_guide_start"
                     app:layout_constraintGuide_begin="81dp"
                     android:orientation="vertical"
-                    />
+            />
 
             <androidx.constraintlayout.widget.Guideline
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/main_guide_end"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_end="38dp"
-                    />
+                    app:layout_constraintGuide_end="37dp"
+            />
 
             <ImageView
                     android:id="@+id/main_image_preview"
@@ -43,7 +54,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
-                    />
+            />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/main_search_button"
@@ -51,12 +62,12 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_open"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:tint="@android:color/white"
+                    android:tint="@color/colorPrimary"
+                    android:backgroundTint="@color/colorPrimaryDark"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     app:layout_constraintBottom_toBottomOf="@+id/main_image_preview"
-                    />
+            />
 
             <TextView
                     android:layout_width="wrap_content"
@@ -67,70 +78,39 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/main_guide_start"
                     app:layout_constraintTop_toTopOf="@+id/main_density"
-                    />
+            />
 
             <EditText
                     android:id="@+id/main_density"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="47dp"
                     android:text="100"
                     app:layout_constraintStart_toStartOf="@+id/main_guide_start"
                     android:layout_marginStart="8dp"
                     app:layout_constraintEnd_toStartOf="@+id/main_guide_end"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintTop_toBottomOf="@+id/main_height"
-                    />
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/resolution_label"
-                    android:id="@+id/main_resolution_label"
-                    app:layout_constraintBottom_toBottomOf="@+id/main_resolution"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/main_guide_start"
-                    app:layout_constraintTop_toTopOf="@+id/main_resolution"
-                    />
-
-            <EditText
-                    android:id="@+id/main_resolution"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="100"
-                    app:layout_constraintStart_toStartOf="@+id/main_guide_start"
-                    android:layout_marginStart="8dp"
-                    app:layout_constraintEnd_toStartOf="@+id/main_guide_end"
-                    android:layout_marginEnd="8dp"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintTop_toBottomOf="@+id/main_image_preview"
-                    />
+                    android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/main_height"/>
 
             <EditText
                     android:id="@+id/main_width"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="41dp"
                     android:text="100"
                     android:layout_marginStart="8dp"
                     app:layout_constraintStart_toStartOf="@+id/main_guide_start"
-                    android:layout_marginEnd="8dp"
-                    app:layout_constraintEnd_toStartOf="@+id/main_guide_end"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintTop_toBottomOf="@+id/main_resolution"
-                    android:layout_marginTop="8dp"
-                    />
+                    app:layout_constraintTop_toBottomOf="@+id/main_image_preview" android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/textView" android:layout_marginEnd="8dp"/>
 
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/width_label"
+                    android:text="@string/size_label"
                     android:id="@+id/main_width_label"
                     app:layout_constraintTop_toTopOf="@+id/main_width"
                     app:layout_constraintBottom_toBottomOf="@+id/main_width"
                     app:layout_constraintEnd_toStartOf="@+id/main_guide_start"
                     app:layout_constraintStart_toStartOf="parent"
-                    />
+            />
 
             <TextView
                     android:layout_width="wrap_content"
@@ -143,30 +123,28 @@
                     app:layout_constraintBottom_toBottomOf="@+id/main_width"
                     app:layout_constraintStart_toStartOf="@+id/main_guide_end"
                     android:layout_marginStart="8dp"
-                    />
+            />
 
             <EditText
                     android:id="@+id/main_height"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="100"
-                    app:layout_constraintTop_toBottomOf="@+id/main_width"
-                    app:layout_constraintStart_toStartOf="@+id/main_guide_start"
                     app:layout_constraintEnd_toStartOf="@+id/main_guide_end"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginStart="8dp"
-                    />
+                    app:layout_constraintTop_toTopOf="@+id/main_width"
+                    app:layout_constraintBottom_toBottomOf="@+id/main_width"
+                    app:layout_constraintStart_toEndOf="@+id/textView" android:layout_marginStart="8dp"/>
 
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/height_label"
-                    app:layout_constraintEnd_toStartOf="@+id/main_guide_start"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/main_height"
-                    app:layout_constraintBottom_toBottomOf="@+id/main_height"
-                    />
+                    android:text="@string/x_label"
+                    app:layout_constraintTop_toTopOf="@+id/main_width"
+                    app:layout_constraintBottom_toBottomOf="@+id/main_width"
+                    android:id="@+id/textView"
+                    android:layout_marginStart="8dp" app:layout_constraintStart_toEndOf="@+id/main_width"
+                    app:layout_constraintEnd_toStartOf="@+id/main_height" android:layout_marginEnd="8dp"/>
 
             <TextView
                     android:layout_width="wrap_content"
@@ -179,7 +157,7 @@
                     android:layout_marginStart="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginEnd="8dp"
-                    />
+            />
 
             <TextView
                     android:layout_width="wrap_content"
@@ -190,7 +168,19 @@
                     app:layout_constraintBottom_toBottomOf="@+id/main_power"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/main_guide_start"
-                    />
+            />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="presets"
+                    android:id="@+id/main_power_label2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/main_guide_start"
+                    app:layout_constraintHorizontal_bias="0.38"
+                    android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+                    app:layout_constraintTop_toTopOf="@+id/main_preset_spinner"
+                    app:layout_constraintBottom_toBottomOf="@+id/main_preset_spinner"/>
 
             <EditText
                     android:id="@+id/main_power"
@@ -201,9 +191,8 @@
                     android:layout_marginEnd="8dp"
                     app:layout_constraintEnd_toStartOf="@+id/main_guide_end"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintTop_toBottomOf="@+id/main_density"
-                    />
+                    app:layout_constraintHorizontal_bias="1.0"
+                    android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/main_preset_spinner"/>
 
             <TextView
                     android:layout_width="wrap_content"
@@ -215,7 +204,7 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     app:layout_constraintStart_toStartOf="@+id/main_guide_end"
-                    />
+            />
 
             <TextView
                     android:layout_width="wrap_content"
@@ -225,7 +214,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/main_speed"
                     app:layout_constraintEnd_toStartOf="@+id/main_guide_start"
                     app:layout_constraintStart_toStartOf="parent"
-                    />
+            />
 
             <EditText
                     android:id="@+id/main_speed"
@@ -239,7 +228,7 @@
                     app:layout_constraintEnd_toStartOf="@+id/main_guide_end"
                     android:layout_marginEnd="8dp"
                     android:layout_marginTop="8dp"
-                    />
+            />
 
             <TextView
                     android:layout_width="wrap_content"
@@ -251,7 +240,7 @@
                     android:layout_marginEnd="8dp"
                     app:layout_constraintStart_toStartOf="@+id/main_guide_end"
                     android:layout_marginStart="8dp"
-                    />
+            />
 
             <TextView
                     android:layout_width="wrap_content"
@@ -262,7 +251,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/main_frequency"
                     app:layout_constraintEnd_toStartOf="@+id/main_guide_start"
                     app:layout_constraintStart_toStartOf="parent"
-                    />
+            />
 
             <EditText
                     android:id="@+id/main_frequency"
@@ -275,7 +264,7 @@
                     app:layout_constraintStart_toStartOf="@+id/main_guide_start"
                     android:layout_marginEnd="8dp"
                     app:layout_constraintEnd_toStartOf="@+id/main_guide_end"
-                    />
+            />
 
             <EditText
                     android:id="@+id/main_ip"
@@ -287,9 +276,7 @@
                     android:layout_marginEnd="8dp"
                     app:layout_constraintEnd_toStartOf="@+id/main_guide_end"
                     app:layout_constraintHorizontal_bias="0.0"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintTop_toBottomOf="@+id/main_laser_spinner"
-                    />
+                    android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/main_laser_spinner"/>
 
             <TextView
                     android:text="@string/ip_label"
@@ -302,7 +289,7 @@
                     android:layout_marginStart="8dp"
                     app:layout_constraintEnd_toStartOf="@+id/main_ip"
                     android:layout_marginEnd="8dp"
-                    />
+                    app:layout_constraintHorizontal_bias="0.612"/>
 
             <TextView
                     android:text="@string/laser_cutter_label"
@@ -315,7 +302,32 @@
                     android:layout_marginStart="8dp"
                     app:layout_constraintEnd_toStartOf="@+id/main_ip"
                     android:layout_marginEnd="8dp"
-                    />
+            />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/job_name_label"
+                    android:id="@+id/main_job_name_label"
+                    app:layout_constraintTop_toTopOf="@+id/main_job_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/main_job_name"
+                    app:layout_constraintEnd_toStartOf="@+id/main_guide_start"
+                    app:layout_constraintStart_toStartOf="parent"
+            />
+
+            <EditText
+                    android:id="@+id/main_job_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/job_name_label"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/main_ip"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintStart_toStartOf="@+id/main_guide_start"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/main_guide_end"
+            />
+
 
             <Spinner
                     android:id="@+id/main_laser_spinner"
@@ -327,7 +339,7 @@
                     android:layout_marginStart="8dp"
                     app:layout_constraintTop_toBottomOf="@+id/main_frequency"
                     android:layout_marginTop="8dp"
-                    />
+            />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
@@ -341,5 +353,41 @@
             android:src="@drawable/ic_send"
             android:tint="@android:color/white"
             android:background="@android:drawable/radiobutton_off_background"
-            />
+    />
+
+    <FrameLayout
+            android:id="@+id/main_sent_progress_group"
+            android:layout_gravity="bottom|start"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:backgroundTint="#A0000000"
+            android:visibility="gone"
+            tools:visibility="gone"
+    >
+        <ProgressBar
+                android:id="@+id/main_sent_progress_bar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_gravity="bottom|start"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:progressTint="@color/colorAccent"
+                android:background="@android:color/transparent"
+                android:progressBackgroundTint="@android:color/transparent"
+                android:visibility="gone"
+                tools:visibility="visible"
+                tools:progress="1000"
+        />
+
+        <TextView
+                android:id="@+id/main_sent_progress_text"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:visibility="gone"
+                android:layout_gravity="bottom|start"
+                android:gravity="center"
+                tools:text="100 %"
+                tools:visibility="visible"
+        />
+    </FrameLayout>
 </FrameLayout>

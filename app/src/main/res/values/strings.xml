@@ -10,4 +10,7 @@
     <string name="ip_label">ip</string>
     <string name="laser_cutter_label">laser cutter</string>
     <string name="dithering_label">dithering</string>
+    <string name="job_name_label">ALC</string>
+    <string name="size_label">size</string>
+    <string name="x_label">x</string>
 </resources>

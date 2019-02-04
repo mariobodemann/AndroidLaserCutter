@@ -24,18 +24,9 @@
  */
 package org.visicut.liblasercut.drivers;
 
-import org.visicut.liblasercut.PowerSpeedFocusProperty;
-import org.visicut.liblasercut.LaserJob;
-import org.visicut.liblasercut.PowerSpeedFocusFrequencyProperty;
-import org.visicut.liblasercut.LaserCutter;
-import org.visicut.liblasercut.VectorCommand;
-import org.visicut.liblasercut.IllegalJobException;
-import org.visicut.liblasercut.ProgressListener;
-import org.visicut.liblasercut.Raster3dPart;
-import org.visicut.liblasercut.JobPart;
-import org.visicut.liblasercut.VectorPart;
-import org.visicut.liblasercut.RasterPart;
+import org.visicut.liblasercut.*;
 import org.visicut.liblasercut.platform.Point;
+
 import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;
@@ -53,7 +44,7 @@ abstract class EpilogCutter extends LaserCutter
 {
 
   public static boolean SIMULATE_COMMUNICATION = false;
-  public static final int NETWORK_TIMEOUT = 3000;
+  public static final int NETWORK_TIMEOUT = 30000;
   /* Resolutions in DPI */
 
   private static final int MINFOCUS = -500;//Minimal focus value (not mm)
@@ -107,7 +98,7 @@ abstract class EpilogCutter extends LaserCutter
 
   private void waitForResponse(int expected) throws IOException, Exception
   {
-    waitForResponse(expected, 3);
+    waitForResponse(expected, 30);
   }
 
   private void waitForResponse(int expected, int timeout) throws IOException, Exception
