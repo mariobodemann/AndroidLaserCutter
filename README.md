@@ -26,4 +26,4 @@ Black will be lasered with maximum power, white with none. Everything inbetween 
 
 *Enjoy*
 
-_NO WARANTIES, ALL IS YOUR RISK, TAKE CARE AND DOWN BURN LIVING THINGS!_
+> _NO WARANTIES, ALL IS YOUR RISK, TAKE CARE AND DOWN BURN LIVING THINGS!_
