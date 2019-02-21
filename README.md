@@ -1,16 +1,17 @@
 # AndroidLaserCutter
 https://github.com/t-oster/LibLaserCut on Android
 
-This is a sample app using https://github.com/t-oster/LibLaserCut/ to create a proof of concept app for Android.
 
 # Purpose
 
 This app uses an image to create a 3d engraving by a laser cutter (tested only on EpilogZing). Samples will be 
 displayed here soon™. 
 
+
 # 3D Raster
 
 Black will be lasered with maximum power, white with none. Everything inbetween will be lasered accordingly.
+
 
 # Usage
 
